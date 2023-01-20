@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - rb/github-actions
+  pull_request:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [
+          "archer_checklist", 
+          "dakota_checklist", 
+          "lance_checklist"
+        ]
+    defaults:
+      run:
+        working-directory: ${{ matrix.variant }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Execute pdfTeX
+        run: pdflatex ${{ matrix.variant }}.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.variant }}
+          path: ${{ matrix.variant }}.pdf
