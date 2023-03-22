@@ -117,9 +117,10 @@
         \emph{Abnormal operations}
     \end{center}
 
-    \checkitem{Engine power loss}{briefed}
+    \checkitem{Rejected takeoff}{briefed}
+    \checkitem{Engine failure after takeoff}{briefed}
     \centering{
-        (before \& after gear up)
+        (landing gear down \& up)
         \\
     }
 \end{checklist}
@@ -129,17 +130,29 @@
     \checkitem{Doors \& windows}{secured}
     \checkitem{Exterior lights}{set}
     \checkitem{Fuel pump}{on}
-    \checkitem{Mixture}{full rich or target EGT}
+    \checkitem{Mixture}{full rich}
     \checkitem{Prop}{full forward}
     \checkitem{Throttle}{full power}
-
-    \begin{tcolorbox}[boxsep=0mm,left=0mm,right=0mm,colframe=black,colback=black,sharpish corners] 
-        \color{white}
-        \centering {
-            \textbf{AIRSPEED: BLUELINE.\\}
-        }
-    \end{tcolorbox}
 \end{checklist}
+
+\begin{checklist_emerg}{Rejected Takeoff}
+    \checkitem{Throttles}{closed}
+    \checkitem{Maintain directional control}{}
+    % TODO: Which checklist should we refer to? After landing checklist?
+    \checkitem{When stopped}{refer to checklist}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Failure After Takeoff}
+    \checkitem{Airspeed}{maintain 85 IAS}
+    \checkitem{Mixture}{full rich}
+    \checkitem{Propeller}{full forward}
+    \checkitem{Throttle}{full power}
+    \checkitem{Landing gear \& flaps}{up}
+    \checkitem{Feather inoperative engine}{}
+    \checkitem{Climb to 1,500' or obstacle hgt.}{}
+    % TODO: Hyperlink to checklist.
+    \checkitem{Refer to checklist}{}
+\end{checklist_emerg}
 
 \begin{checklist}{Cruise}
     \checkitem{Power}{set}
