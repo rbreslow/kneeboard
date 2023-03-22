@@ -1,0 +1,211 @@
+% This is the box that surrounds the checklist items.
+\newtcolorbox{checklist}[1]{
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\phantomsection
+\addcontentsline{toc}{section}{Normal Procedures}
+
+\twocolumn
+
+\begin{checklist}{Before Start}
+    \checkitem{Walk around}{completed}
+    \checkitem{Butterfly tool}{stowed}
+    \checkitem{Seat belts}{fastened}
+    \checkitem{PIC}{established}
+    \checkitem{Passengers}{briefed}
+\end{checklist}
+
+\begin{checklist}{Engine Start}
+    \checkitem{Parking brake}{set}
+    \checkitem{All avionics \& lights}{off}
+    \checkitem{Circuit breakers}{check}
+    \checkitem{Landing gear}{down}
+    \checkitem{Fuel}{check, then on}
+    \checkitem{Carburetor heat}{off}
+    \checkitem{Cowl flaps}{set}
+    \checkitem{Battery switch}{on}
+    \checkitem{Fuel indicators}{check}
+    \checkitem{3-in-the-green}{check}
+
+    \begin{center}
+        \emph{\hypertarget{both-engines}{Repeat for both engines}}
+    \end{center}
+
+    \checkitem{Mixture}{full rich}
+    \checkitem{Prop}{full forward}
+    \checkitem{Throttle}{$\frac{1}{4}$ travel}
+    \checkitem{Fuel pump}{on}
+    \checkitem{Prime}{5-6 sec.}
+    \checkitem{Clear/starter}{engage}
+    \checkitem{Throttle}{idle}
+    \checkitem{Mixture}{lean for taxi}
+    \checkitem{Oil pressure}{above red radial}
+    \checkitem{Alternator switch}{on}
+    \checkitem{Load meter}{check charging}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Fuel pressure}{check}
+\end{checklist}
+
+\begin{checklist}{After Start}
+    \checkitem{Avionics bus 1 \& 2}{on}
+    \checkitem{Circuit breakers}{check}
+    \checkitem{Garmin database}{check}
+    \checkitem{Garmin self-test}{check}
+    \checkitem{ATIS \& clearance}{recieved}
+\end{checklist}
+
+% \begin{checklist}{Before Taxi}
+%     \checkitem{Transponder}{set}
+%     \checkitem{COM \& NAV}{set}
+%     \checkitem{Initial altitude}{set}
+%     \checkitem{Initial heading}{set}
+% \end{checklist}
+
+\begin{checklist}{Taxi}
+    \checkitem{Brakes}{check}
+    \checkitem{Heading indicator}{±5°}
+    \checkitem{Attitude indicator}{check}
+    \checkitem{Turn coordinator}{check}
+\end{checklist}
+
+\begin{checklist}{Engine Run-Up}
+    \checkitem{Mixture}{full rich}
+    \checkitem{Prop}{full forward}
+    \checkitem{Throttle}{2200 RPM}
+    \checkitem{Mags}{check L \& R}
+    \centering{
+        (max drop 175; max $\Delta$ 50)
+        \\
+    }
+    \checkitem{Carburetor heat}{check}
+    \checkitem{Prop}{cycle}
+    \centering{
+        (100-200 rpm drop)
+        \\
+    }
+    \checkitem{Throttle}{1500 RPM}
+    \checkitem{Prop}{cycle}
+    \centering{
+        ($\downarrow$ rpm $\uparrow$ mp $\downarrow$ oil press.)
+        \\
+    }
+    \checkitem{Vacuum}{4.9-5.1$''$Hg}
+    \checkitem{Load meter}{check}
+    \checkitem{Fuel pressure}{check}
+    \checkitem{Oil pressure \& oil temp.}{check}
+    \checkitem{Alternate static}{check}
+    \checkitem{Annunciator panel}{check}
+    \checkitem{Throttle}{idle}
+    \checkitem{Mixture}{lean for taxi}
+    % TODO: The Duchess POH mentions a procedures for testing the alternators.
+\end{checklist}
+
+\begin{checklist}{Before Takeoff}
+    \checkitem{Flight controls}{check}
+    \checkitem{Flight instruments}{check}
+    \checkitem{Carburetor heat}{off}
+    \checkitem{Cowl flaps}{set}
+    \checkitem{Flaps}{set}
+    \checkitem{Trim}{set}
+
+    \begin{center}
+        \emph{\hypertarget{departure-briefing}{Departure briefing}}
+    \end{center}
+
+    \checkitem{\hyperlink{runway-length-table}{Takeoff distance}}{briefed}
+    \checkitem{Terrain \& obstacles}{briefed}
+    \checkitem{Takeoff minimums}{briefed}
+    \checkitem{Departure procedure}{briefed}
+
+    \begin{center}
+        \emph{Abnormal operations}
+    \end{center}
+
+    \checkitem{Engine power loss}{briefed}
+    \centering{
+        (before \& after gear up)
+        \\
+    }
+\end{checklist}
+
+\begin{checklist}{Takeoff}
+    \checkitem{Time off}{noted}
+    \checkitem{Doors \& windows}{secured}
+    \checkitem{Exterior lights}{set}
+    \checkitem{Fuel pump}{on}
+    \checkitem{Mixture}{full rich or target EGT}
+    \checkitem{Prop}{full forward}
+    \checkitem{Throttle}{full power}
+
+    \begin{tcolorbox}[boxsep=0mm,left=0mm,right=0mm,colframe=black,colback=black,sharpish corners] 
+        \color{white}
+        \centering {
+            \textbf{AIRSPEED: BLUELINE.\\}
+        }
+    \end{tcolorbox}
+\end{checklist}
+
+\begin{checklist}{Cruise}
+    \checkitem{Power}{set}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Mixture}{target EGT}
+\end{checklist}
+
+\begin{checklist}{Before Approach}
+    \checkitem{NOTAMS}{briefed}
+    \checkitem{ATIS, arrival, \& approach}{briefed}
+    \checkitem{Terrain \& taxi}{briefed}
+    \checkitem{Specials}{briefed}
+\end{checklist}
+
+\begin{checklist}{Approach}
+    \checkitem{Altimeter}{verify}
+    \checkitem{DA or MDA}{verify MSL}
+    \checkitem{Landing gear}{down}
+    \checkitem{Throttle}{17$''$}
+    \checkitem{Prop}{2300 RPM}
+    \checkitem{Airspeed}{100 KIAS}
+    \checkitem{Mixture}{constant EGT}
+\end{checklist}
+
+\begin{checklist}{After Landing}
+    \checkitem{Flaps}{retract}
+    \checkitem{Mixture}{lean for taxi}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Carburetor heat}{off}
+    \checkitem{Cowl flaps}{set}
+\end{checklist}
+
+\begin{checklist}{V-Speeds (3,900 lbf)}
+    \checkitem{$V_{BG}$}{95 KIAS}
+    \checkitem{$V_{R}$}{71 KIAS}
+    \checkitem{$V_{X}$}{71 KIAS}
+    \checkitem{$V_{XSE}$}{85 KIAS}
+    \checkitem{$V_{Y}$}{85 KIAS}
+    \checkitem{$V_{YSE}$}{85 KIAS}
+    \checkitem{$V_{CC}$}{100 KIAS}
+    \checkitem{$V_{LE}$}{140 KIAS}
+    \checkitem{$V_{LO(RET)}$}{112 KIAS}
+    \checkitem{$V_{Ref}$}{76 KIAS}
+    \checkitem{$V_{A}$}{132 KIAS}
+    \checkitem{$V_{MCA}$}{65 KIAS}
+    \checkitem{$V_{S_{0}}$/$V_{S_{1}}$}{58/68 KIAS}
+\end{checklist}
+
+\begin{checklist}{Engine Shutdown}
+    \checkitem{Avionics bus 1 \& 2}{off}
+    \checkitem{Lights}{off}
+    \checkitem{Throttle}{1000 RPM}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Ignition}{off}
+    \checkitem{Bat. and alt. switches}{off}
+\end{checklist}
+
+\onecolumn
