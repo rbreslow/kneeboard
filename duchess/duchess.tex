@@ -71,6 +71,32 @@
 
 }
 
+% This is the box that surrounds the checklist items.
+\newtcolorbox{checklist}[1]{
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\newtcolorbox{checklist_emerg}[1]{
+    enhanced,
+    title style={
+        pattern={Lines[angle=60,distance=32pt,line width=16pt]},
+        pattern color=black!75,
+    },
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
 % Set the default font family to sans-serif.
 \renewcommand{\familydefault}{\sfdefault}
 
