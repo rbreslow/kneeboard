@@ -1,0 +1,229 @@
+% This is the box that surrounds the checklist items.
+\newtcolorbox{checklist}[1]{
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\phantomsection
+\addcontentsline{toc}{section}{Normal Procedures}
+\renewcommand{\rightmark}{Normal Procedures}
+
+\twocolumn
+
+\begin{checklist}{Before Start}
+    \checkitem{Walk around}{complete}
+    \checkitem{Seat belts}{fasten}
+    \checkitem{PIC}{establish}
+    \checkitem{Passengers}{brief}
+\end{checklist}
+
+\begin{checklist}{Engine Start}
+    \checkitem{Parking brake}{set}
+    \checkitem{Fuel selector}{on}
+    \checkitem{Alternate air}{off}
+    \checkitem{Cowl flaps}{open}
+    \checkitem{Alternators}{on}
+    \checkitem{Master switch}{on}
+    \checkitem{3 green, no red}{check}
+
+    \begin{center}
+        \emph{\hypertarget{both-engines}{Repeat for both engines}}
+    \end{center}
+
+    \checkitem{Mixture}{full rich}
+    \checkitem{Prop}{full forward}
+    \checkitem{Throttle}{full open}
+    \checkitem{Prime}{2-3 sec.}
+    \checkitem{Throttle}{$\frac{1}{2}''$}
+    \checkitem{Clear/starter}{engage}
+    \checkitem{Throttle}{1000 RPM}
+    \checkitem{Oil pressure}{above 30 PSI}
+    \checkitem{Load meter}{check}
+\end{checklist}
+
+\begin{checklist}{After Start}
+    \checkitem{Avionics master}{on}
+    \checkitem{Circuit breakers}{check}
+    \checkitem{Garmin database}{check}
+    \checkitem{Garmin self-test}{check}
+    \checkitem{ATIS \& clearance}{recieve}
+\end{checklist}
+
+\begin{checklist}{Before Taxi}
+    \checkitem{Transponder}{set}
+    \checkitem{COM \& NAV}{set}
+    \checkitem{Initial heading}{set}
+    \checkitem{Exterior lights}{set}
+\end{checklist}
+
+\begin{checklist}{Taxi}
+    \checkitem{Brakes}{check}
+    \checkitem{Heading indicator}{±5°}
+    \checkitem{Attitude indicator}{check}
+    \checkitem{Turn coordinator}{check}
+\end{checklist}
+
+% Mike Busch and John Deakin have made some interesting points about the
+% engine run up process. We're running so rich, and at such low power on
+% the ground, it's hard to identity any real problems with the ignition
+% system outside of a dead spark plug, a dead mag, or severe spark plug
+% fouling.
+% TBD: Finish this.
+% See: https://www.avweb.com/flight-safety/pelicans-perch-19putting-it-all-together/
+\begin{checklist}{Engine Run-Up}
+    \checkitem{Mixtures}{full rich}
+    \checkitem{Props}{full forward}
+    % John Deakin says:
+    % > The usual 1,700 RPM for running up most TCM engines (or 2,000
+    % > RPM for most Lycomings) is NOT critical. I’ve seen pilots diddle
+    % > and dawdle trying to get exactly 1,700 but all this does is heat
+    % > the engine up for no good purpose. Plus or minus a couple
+    % > hundred RPM won’t hurt a thing, so push it up to “about 1,700”
+    % > or “about 2,000” and get on with it.
+    % > [...]
+    % > It is also becoming very clear that the mag check at low power
+    % > (anything less than cruise power) is not very useful for
+    % > catching problems; it’s nothing more than a quick check to catch
+    % > major problems like severe plug fouling, a “hot mag,” or a dead
+    % > plug, or cylinder. This was well-known in the big old radials,
+    % > where mag checks are almost always performed at about 30″ MP,
+    % > and up around 2,300 RPM (varies with model).
+    \checkitem{Throttles}{1000 RPM}
+    \checkitem{Manifold pressure lines}{drain}
+    \checkitem{Prop}{check feathering}
+    \checkitem{Throttles}{1900 RPM}
+    \checkitem{Mags}{check L \& R}
+    \centering{
+        (max drop 150; max $\Delta$ 50)
+        \\
+    }
+    \checkitem{Alternate air}{check}
+    % When running up the Lance, Jim Cherry was taken aback when I
+    % cycled the propellor at 1800 RPM. His reasoning was that it's
+    % overkill, it doesn't need to be cycled that high. Unnessecary
+    % strain on things, why do it? But, I forget the ballpark that he
+    % reccomended. It may have been 1000-1500 RPM.
+    \checkitem{Prop}{cycle}
+    \centering{
+        ($\downarrow$ rpm $\uparrow$ mp $\downarrow$ oil press.)
+        \\
+    }
+    \checkitem{Vacuum}{4.5-5.2$''$Hg}
+    \checkitem{Oil pressure \& oil temp.}{check}
+    \checkitem{Fuel pressure}{check}
+    \checkitem{CHTs}{check}
+    \checkitem{Load meter}{check}
+    \checkitem{Alternate static}{check}
+    \checkitem{Annunciator panel}{check}
+    \checkitem{Throttles}{idle}
+\end{checklist}
+
+\begin{checklist}{Before Takeoff}
+    \checkitem{Flight controls}{check}
+    \checkitem{Flight instruments}{check}
+    \checkitem{Alternate air}{off}
+    \checkitem{Cowl flaps}{open}
+    \checkitem{Flaps}{set}
+    \checkitem{Trim}{set}
+
+    % In the future, consider creating takeoff/landing cards to do the hard work
+    % before the flight. Then, all we need to do is read through pre-computed
+    % things. Also, consider how to do parts of the briefing while still on the
+    % ramp, rather than right in front of the runway.
+    \begin{center}
+        \emph{\hypertarget{departure-briefing}{Departure briefing}}
+    \end{center}
+
+    % TODO: Include some prompt to think about any possibility of
+    % tailwind, extreme crosswind, or extreme temperature inversion.
+    \checkitem{\hyperlink{runway-length-table}{Takeoff distance}}{brief}
+    \checkitem{Terrain \& obstacles}{brief}
+    \checkitem{Takeoff minimums}{brief}
+    \checkitem{Departure procedure}{brief}
+
+    \begin{center}
+        \emph{Abnormal operations}
+    \end{center}
+
+    \checkitem{Rejected takeoff}{brief}
+    \checkitem{Engine power loss}{brief}
+\end{checklist}
+
+\begin{checklist}{Takeoff}
+    \checkitem{Time off}{note}
+    \checkitem{Doors \& windows}{secure}
+    \checkitem{Exterior lights}{set}
+    % TODO: Or target fuel flow in very high DA.
+    \checkitem{Mixtures}{full rich}
+    \checkitem{Props}{full forward}
+    \checkitem{Throttles}{39$''$ MP}
+\end{checklist}
+
+\begin{checklist}{Climb}
+    % Approximately 75% power.
+    \checkitem{Throttles}{31.5$''$ MP}
+    \checkitem{Props}{2450 RPM}
+    \checkitem{Fuel pumps}{lo (hot weather)}
+    \checkitem{Airspeed}{102 KIAS}
+\end{checklist}
+
+\begin{checklist}{Cruise}
+    \checkitem{Throttles}{30$''$ MP}
+    \checkitem{Props}{2300 RPM}
+    \checkitem{Mixtures}{10.3 GPH}
+    \checkitem{Airspeed}{142 KIAS}
+\end{checklist}
+
+\begin{checklist}{Before Approach}
+    \checkitem{NOTAMS}{brief}
+    \checkitem{ATIS, arrival, \& approach}{brief}
+    \checkitem{Terrain \& taxi}{brief}
+    \checkitem{Specials}{brief}
+\end{checklist}
+
+\begin{checklist}{Approach}
+    \checkitem{Altimeter}{verify}
+    \checkitem{DA or MDA}{verify MSL}
+    % TODO: Or target fuel flow in very high DA.
+    \checkitem{Throttles}{17$''$ MP}
+    \checkitem{Props}{2300 RPM}
+    \checkitem{Mixtures}{full rich}
+    \checkitem{Landing gear}{down}
+    \checkitem{Airspeed}{100 KIAS}
+\end{checklist}
+
+\begin{checklist}{After Landing}
+    \checkitem{Flaps}{retract}
+    \checkitem{Alternate air}{off}
+    \checkitem{Cowl flaps}{open}
+\end{checklist}
+
+\begin{checklist}{Engine Shutdown}
+    \checkitem{TITs}{< 720\textdegree{F}}
+    \checkitem{Avionics master}{off}
+    \checkitem{Lights}{off}
+    \checkitem{Throttles}{1000 RPM}
+    \checkitem{Mixtures}{idle cut-off}
+    \checkitem{Ignition}{off}
+    \checkitem{Master switch}{off}
+\end{checklist}
+
+\begin{checklist}{V-Speeds}
+    \checkitem{$V_{R}$}{66-71 KIAS}
+    \checkitem{$V_{X}$}{76 KIAS}
+    \checkitem{$V_{Y}$}{89 KIAS}
+    \checkitem{$V_{CC}$}{102 KIAS}
+    \checkitem{$V_{LE}$}{129 KIAS}
+    \checkitem{$V_{LO(RET)}$}{107 KIAS}
+    \checkitem{$V_{Ref}$ (Normal)}{83 KIAS}
+    \checkitem{$V_{Ref}$ (Short Field)}{78 KIAS}
+    \checkitem{$V_{A}$}{121-136 KIAS}
+    \checkitem{$V_{MCA}$}{66 KIAS}
+\end{checklist}
+
+\onecolumn
