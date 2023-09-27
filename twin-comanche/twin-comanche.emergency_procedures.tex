@@ -1,0 +1,232 @@
+\newtcolorbox{checklist_emerg}[1]{
+    enhanced,
+    title style={
+        pattern={Lines[angle=60,distance=32pt,line width=16pt]},
+        pattern color=black!75,
+    },
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\phantomsection
+\addcontentsline{toc}{section}{Emergency Procedures}
+\renewcommand{\rightmark}{Emergency Procedures}
+
+\twocolumn
+
+\begin{checklist_emerg}{Engine Failure During Takeoff (Below 89 KIAS or Gear Down)}
+    \begin{flushright}
+        \checkitem{Throttles}{immediately close}
+        \checkitem{Brakes}{as required / stop straight ahead}
+    \end{flushright}
+
+    \begin{center}
+        \textbf{If insufficient runway remains for a complete stop:}
+    \end{center}
+
+    \checkitem{Throttles}{immediately close}
+    \checkitem{Mixtures}{idle cut-off}
+    \checkitem{Fuel selectors}{off}
+    \checkitem{Magnetos}{off}
+    \checkitem{Fuel pumps}{off}
+    \checkitem{Battery master switch}{off}
+    \checkitem{Brakes}{apply max. braking}
+
+    \begin{center}
+        \textbf{Maintain directional control, maneuvering to avoid obstacles if necessary.}
+    \end{center}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Failure During Takeoff (Above 89 KIAS)}
+    \begin{flushright}
+        \checkitem{Airspeed}{maintain 91 KIAS}
+        \checkitem{Mixtures}{full forward}
+        \checkitem{Props}{full forward}
+        \checkitem{Throttles}{full forward}
+        \checkitem{Flaps}{up}
+        \checkitem{Landing gear}{up}
+        \checkitem{Identify}{dead foot, dead engine}
+        \checkitem{Verify}{by closing throttle}
+        \checkitem{Prop (inop. engine)}{feather}
+        \checkitem{Climb speed}{89 KIAS}
+        \checkitem{Trim}{5\textdegree{} bank toward op. engine, approx. $\frac{1}{2}$ ball slip}
+        \checkitem{Cowl flap (inop. engine)}{close}
+    \end{flushright}
+    
+    \begin{center}
+        \textbf{When a positive rate of climb has been established:}
+    \end{center}
+    
+    \checkitem{Engine securing}{complete}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Troubleshooting}
+    \begin{center}
+        \textbf{To attempt to restore power prior to feathering:}
+    \end{center}
+
+    \begin{flushright}
+        \checkitem{Mixtures}{as required}
+        \checkitem{Fuel selector}{crossfeed}
+        \checkitem{Magnetos}{L or R only}
+        \checkitem{Alternate air}{on}
+        \checkitem{Fuel pump}{on, if\\power is not immediately\\restored, off}
+    \end{flushright}
+
+    \begin{center}
+        \textbf{Feather before RPM drops below 800.}
+    \end{center}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Securing Procedure (Feathering Procedure)}
+    \checkitem{Throttle}{close}
+    \checkitem{Prop}{feather (800 RPM min.)}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Cowl flap}{close}
+    \checkitem{Fuel selector}{off}
+    \checkitem{Alternator}{off}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Magnetos}{off}
+    \checkitem{Electrical load}{reduce}
+    \checkitem{Crossfeed}{as required}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Air Starting Procedure (Unfeathering Procedure)}
+    \checkitem{Fuel selector}{on}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Throttle}{open $\frac{1}{4}''$}
+    \checkitem{Prop}{mid range}
+    \checkitem{Mixture}{full rich}
+    \checkitem{Magnetos}{on}
+    \checkitem{Starter}{engage}
+    \checkitem{Throttle}{reduce power}
+    \checkitem{Alternator (after restart)}{on}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Manual Extension of Landing Gear}
+    \begin{center}
+        \textbf{Check following before extending gear manually:}
+    \end{center}
+
+    \checkitem{Circuit breakers}{check}
+    \checkitem{Master switch}{on}
+    \checkitem{Alternators}{check}
+    \checkitem{Nav. lights}{off (daytime)}
+
+    \begin{center}
+        \textbf{To extend, reposition guard clip downward clear of knob and proceed as follows:}
+    \end{center}
+
+    \checkitem{Airspeed}{reduce (87 KIAS max.)}
+    \checkitem{Landing gear}{down}
+    \checkitem{Motor release arm}{raise and push full forward}
+    \checkitem{Gear extension handle}{rotate full forward}
+    \checkitem{Indicator lights}{3 green}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Electrical Fire}
+    \checkitem{Master switch}{off}
+    \checkitem{Avionics master}{off}
+    \checkitem{Electrical switches}{off}
+    \begin{center}
+        \textbf{If no smoke:}
+    \end{center}
+    \checkitem{Circuit breakers}{note tripped}
+    \checkitem{Circuit breakers}{off}
+    \checkitem{Master switch}{on}
+    \begin{center}
+        \textbf{If no smoke:}
+    \end{center}
+    \checkitem{Avionics master}{on}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Fire During Start}
+    \begin{center}
+        \textbf{If engine has not started:}
+    \end{center}
+
+    \checkitem{Fuel selector}{off}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Throttle}{full open}
+    \checkitem{Starter}{continue to crank}
+
+    \begin{center}
+        \textbf{If engine has already started and is running, continue operating to try pulling the fire into the engine.}
+    \end{center}
+
+    \begin{center}
+        \textbf{If fire continues:}
+    \end{center}
+
+    \checkitem{Fuel selector}{off}
+    \checkitem{Fuel pump}{off}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Throttle}{full open}
+    \checkitem{Airplane}{evacuate}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Engine Fire In Flight}
+    \checkitem{Fuel selector}{off}
+    \checkitem{Throttle}{close}
+    \checkitem{Prop}{feather}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Heater \& defroster}{off}
+    \checkitem{Cowl flap}{open}
+    \checkitem{Engine securing}{complete}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{Emergency Descent}
+    \begin{flushright}
+        \checkitem{Throttles}{close}
+        \checkitem{Props}{full forward}
+        \checkitem{Mixture}{as required for\\smooth operation}
+        \checkitem{Landing gear}{down}
+        \checkitem{Airspeed}{129 KIAS}
+    \end{flushright}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{IFR Comms Failure (U.S.)}
+    \checkitem{Squwak}{7600}
+
+    \begin{center}
+        \textbf{If VFR, land as soon as practicable.}
+    \end{center}
+
+    \textbf{Route}
+    \begin{itemize}[noitemsep]
+        \item ATC assigned route
+        \item Vector clearance
+        \item Expected route
+        \item Filed route
+    \end{itemize}
+
+    \textbf{Altitude (highest of)}
+    \begin{itemize}[noitemsep]
+        \item Minimum altitude for IFR
+        \item Expected altitude
+        \item Assigned altitude
+    \end{itemize}
+\end{checklist_emerg}
+
+\begin{checklist_emerg}{IFR Comms Failure (Europe)}
+    \checkitem{Squwak}{7600}
+
+    \begin{center}
+        \textbf{If VFR, land as soon as practicable.}
+    \end{center}
+
+    \begin{center}
+        \textbf{If IFR, maintain last assigned speed and altitude for a period of 7 minutes.}
+    \end{center}
+
+    \begin{center}
+        \textbf{Refer to expanded procedure in Jeppesen Airway Manual.}
+    \end{center}
+\end{checklist_emerg}
+
+\onecolumn
