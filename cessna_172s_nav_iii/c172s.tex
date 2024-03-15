@@ -7,7 +7,6 @@
         % that 0.5in is looking best for checklists. Compromising to
         % accomodate longer line lengths.
         margin=0.25in,
-        rmargin=0.375in,
         % headsep is the separation between header and text. footskip is
         % the separation between baseline of last line of text and
         % baseline of footer. The default is a bit larger. Setting these
@@ -61,6 +60,11 @@
 }
 % Improves positioning of tables and figures.
 \usepackage{float}
+% The following two packages all for sans-serif math.
+\usepackage{sansmathfonts}
+\usepackage[T1]{fontenc}
+% https://tex.stackexchange.com/questions/84175/itemize-without-line-feed
+\usepackage{enumitem}
 
 % This is a macro that formats the checklist items and adds a new line.
 \def\checkitem#1#2{
@@ -80,6 +84,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Model 172S NAV III, Cessna Skyhawk SP}
+\fancyhead[R]{\rightmark}
 \fancyfoot[L]{v.\today}
 \fancyfoot[R]{\thepage}
 
@@ -97,6 +102,8 @@
 \raggedcolumns
 
 \include{c172s.preflight_checklist.tex}
-\include{c172s.normal_procedures}
+\include{c172s.normal_procedures.tex}
+\include{c172s.emergency_procedures.tex}
+\include{c172s.tables_and_figures.tex}
 
 \end{document}
