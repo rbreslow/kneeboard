@@ -1,0 +1,62 @@
+\newtcolorbox{checklist_emerg}[1]{
+    enhanced,
+    title style={
+        pattern={Lines[angle=60,distance=32pt,line width=16pt]},
+        pattern color=black!75,
+    },
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\phantomsection
+\addcontentsline{toc}{section}{Emergency Procedures}
+\renewcommand{\rightmark}{Emergency Procedures}
+
+\twocolumn
+
+\begin{checklist_emerg}{IFR Comms Failure (U.S.)}
+    \checkitem{Squwak}{7600}
+
+    \begin{center}
+        \textbf{If VFR, land as soon as practicable.}
+    \end{center}
+
+    \textbf{Route}
+    \begin{itemize}[noitemsep]
+        \item ATC assigned route
+        \item Vector clearance
+        \item Expected route
+        \item Filed route
+    \end{itemize}
+
+    \textbf{Altitude (highest of)}
+    \begin{itemize}[noitemsep]
+        \item Minimum altitude for IFR
+        \item Expected altitude
+        \item Assigned altitude
+    \end{itemize}
+\end{checklist_emerg}
+
+
+\begin{checklist_emerg}{IFR Comms Failure (Europe)}
+    \checkitem{Squwak}{7600}
+
+    \begin{center}
+        \textbf{If VFR, land as soon as practicable.}
+    \end{center}
+
+    \begin{center}
+        \textbf{If IFR, maintain last assigned speed and altitude (or min. flight alt.) for a period of 7 minutes.}
+    \end{center}
+
+    \begin{center}
+        \textbf{Refer to Jeppesen Airway Manual.}
+    \end{center}
+\end{checklist_emerg}
+
+\onecolumn
