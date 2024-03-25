@@ -1,0 +1,225 @@
+% This is the box that surrounds the checklist items.
+\newtcolorbox{checklist}[1]{
+    colback=white,
+    colframe=black,
+    fonttitle=\centering\bfseries,
+    adjusted title={#1},
+    sharpish corners,
+    phantom=\phantomsection,
+    add to list={toc}{subsection}
+}
+
+\phantomsection
+\addcontentsline{toc}{section}{Normal Procedures}
+
+\twocolumn
+
+\begin{checklist}{Before Start}
+    \checkitem{Walk around}{complete}
+    \checkitem{Seat belts}{fasten}
+    \checkitem{PIC}{establish}
+    \checkitem{Passengers}{brief}
+\end{checklist}
+
+\begin{checklist}{Engine Start}
+    \checkitem{Parking brake}{set}
+    \checkitem{Fuel selector}{both}
+    \checkitem{Avionics master}{check off}
+    \checkitem{Carburetor heat}{off}
+    \checkitem{Master switch}{on}
+    \checkitem{Mixture}{full rich}
+    \checkitem{Throttle}{$\frac{1}{4}''$}
+    \checkitem{Prime}{5-6 shots, if cold}
+    \checkitem{Clear/starter}{engage}
+    \checkitem{Throttle}{idle}
+    \checkitem{Mixture}{lean for taxi}
+    \checkitem{Oil pressure}{above red radial}
+    \checkitem{Load meter}{check}
+\end{checklist}
+
+\begin{checklist}{After Start}
+    \checkitem{Avionics master}{on}
+    \checkitem{Circuit breakers}{check}
+    \checkitem{Garmin database}{check}
+    \checkitem{Garmin self-test}{check}
+    \tcblower
+    \checkitem{ATIS \& clearance}{recieve}
+\end{checklist}
+
+\newpage
+
+\begin{checklist}{Before Taxi}
+    \checkitem{Transponder}{set}
+    \checkitem{COM \& NAV}{set}
+    \checkitem{Initial altitude}{set}
+    \checkitem{Initial heading}{set}
+\end{checklist}
+
+\begin{checklist}{Taxi}
+    \checkitem{Exterior lights}{set}
+    \checkitem{Brakes}{check}
+    \checkitem{Heading indicator}{±5°}
+    \checkitem{Attitude indicator}{check}
+    \checkitem{Turn coordinator}{check}
+\end{checklist}
+
+% Mike Busch and John Deakin have made some interesting points about the
+% engine run up process. We're running so rich, and at such low power on
+% the ground, it's hard to identity any real problems with the ignition
+% system outside of a dead spark plug, a dead mag, or severe spark plug
+% fouling.
+% TBD: Finish this.
+% See: https://www.avweb.com/flight-safety/pelicans-perch-19putting-it-all-together/
+\begin{checklist}{Engine Run-Up}
+    \checkitem{Mixture}{full rich}
+    % John Deakin says:
+    % > The usual 1,700 RPM for running up most TCM engines (or 2,000
+    % > RPM for most Lycomings) is NOT critical. I’ve seen pilots diddle
+    % > and dawdle trying to get exactly 1,700 but all this does is heat
+    % > the engine up for no good purpose. Plus or minus a couple
+    % > hundred RPM won’t hurt a thing, so push it up to “about 1,700”
+    % > or “about 2,000” and get on with it.
+    % > [...]
+    % > It is also becoming very clear that the mag check at low power
+    % > (anything less than cruise power) is not very useful for
+    % > catching problems; it’s nothing more than a quick check to catch
+    % > major problems like severe plug fouling, a “hot mag,” or a dead
+    % > plug, or cylinder. This was well-known in the big old radials,
+    % > where mag checks are almost always performed at about 30″ MP,
+    % > and up around 2,300 RPM (varies with model).
+    \checkitem{Throttle}{1700 RPM}
+    % \checkitem{JPI}{normalize}
+    \checkitem{Mags}{check L \& R}
+    \centering{
+        (max drop 125; max $\Delta$ 50)
+        \\
+    }
+    \checkitem{Carburetor heat}{check}
+    \checkitem{Load meter}{check}
+    \checkitem{Oil pressure \& oil temp.}{check}
+    \checkitem{Alternate static}{check}
+    \checkitem{Annunciator panel}{check}
+    \checkitem{Throttle}{idle}
+    \checkitem{Mixture}{lean for taxi}
+\end{checklist}
+
+\begin{checklist}{Before Takeoff}
+    \checkitem{Flight controls}{check}
+    \checkitem{Flight instruments}{check}
+    \checkitem{Carburetor heat}{off}
+    \checkitem{Flaps}{set}
+    \checkitem{Trim}{set}
+
+    % In the future, consider creating takeoff/landing cards to do the hard work
+    % before the flight. Then, all we need to do is read through pre-computed
+    % things. Also, consider how to do parts of the briefing while still on the
+    % ramp, rather than right in front of the runway.
+    \begin{center}
+        \emph{\hypertarget{departure-briefing}{Departure briefing}}
+    \end{center}
+
+    % TODO: Include some prompt to think about any possibility of
+    % tailwind, extreme crosswind, or extreme temperature inversion.
+    \checkitem{\hyperlink{runway-length-table}{Takeoff distance}}{brief}
+    \checkitem{Terrain \& obstacles}{brief}
+    \checkitem{Takeoff minimums}{brief}
+    \checkitem{Departure procedure}{brief}
+
+    \begin{center}
+        \emph{Abnormal operations}
+    \end{center}
+
+    % TODO: What will we do in case of a fire? Who will fly in an
+    % emergency?
+    \checkitem{Rejected takeoff}{brief}
+    \checkitem{Engine power loss}{brief}
+    \centering{
+        (below \& above $\approx$ 600' AGL)
+        \\
+    }
+\end{checklist}
+
+\begin{checklist}{Takeoff}
+    \checkitem{Time off}{note}
+    \checkitem{Doors \& windows}{secure}
+    \checkitem{Exterior lights}{set}
+    \checkitem{Mixture}{full rich or max RPM}
+    \checkitem{Throttle}{full power}
+
+    \begin{tcolorbox}[boxsep=0mm,left=0mm,right=0mm,colframe=black,colback=black,sharpish corners] 
+        \color{white}
+        \centering {
+            \textbf{I WILL LOSE THE ENGINE,\\I WILL PUSH IMMEDIATELY!}
+        }
+    \end{tcolorbox}
+\end{checklist}
+
+\begin{checklist}{Climb}
+    \checkitem{Mixture}{full rich or max RPM}
+    \checkitem{Throttle}{full power}
+    \checkitem{Airspeed}{70 - 85 KIAS}
+\end{checklist}
+
+% TODO: Do 55% power as well under similar conditions. For holding, better
+% range, etc.
+\begin{checklist}{Cruise}
+    % From Reims F172N flight manual, cruise performance, max weight 1043 kg,
+    % standard temperature, 2000 ft pressure altitude.
+    \checkitem{Throttle}{2400 RPM}
+    \checkitem{Mixture}{best power}
+    \checkitem{Fuel flow}{7.5 GPH}
+    % https://aerotoolbox.com/airspeed-conversions/ says 111 kts TAS at 2000 ft
+    % is 108 kts CAS. F172N airspeed correction table says 108 kts CAS is 110
+    % kts IAS.
+    \checkitem{Airspeed}{110 KIAS}
+    \checkitem{Cruise performance table}{check}
+\end{checklist}
+
+\begin{checklist}{Before Approach}
+    \checkitem{NOTAMs}{brief}
+    \checkitem{ATIS, arrival, \& approach}{brief}
+    \checkitem{Terrain \& taxi}{brief}
+    \checkitem{Specials}{brief}
+\end{checklist}
+
+\begin{checklist}{Approach}
+    \checkitem{Altimeter}{verify}
+    \checkitem{DA or MDA}{verify MSL}
+    \checkitem{Throttle}{1800 RPM}
+    \checkitem{Airspeed}{90 KIAS}
+    \checkitem{Mixture}{full rich}
+\end{checklist}
+
+\begin{checklist}{After Landing}
+    \checkitem{Flaps}{retract}
+    \checkitem{Mixture}{lean for taxi}
+    \checkitem{Carburetor heat}{off}
+\end{checklist}
+
+\begin{checklist}{Engine Shutdown}
+    \checkitem{Avionics master}{off}
+    \checkitem{Lights}{off}
+    \checkitem{Throttle}{1000 RPM}
+    \checkitem{Mixture}{idle cut-off}
+    \checkitem{Ignition}{off}
+    \checkitem{Master switch}{off}
+    \checkitem{Fuel selector}{left or right}
+\end{checklist}
+
+% Numbers obtained from Cessna 172P POH at maximum weight 2400 lbs.
+\begin{checklist}{V-Speeds}
+    \checkitem{$V_{BG}$}{65 KIAS}
+    \checkitem{$V_R$}{55 KIAS}
+    \checkitem{$V_R$ (Short Field 10\degree{})}{51 KIAS}
+    \checkitem{$V_X$}{60 KIAS}
+    \checkitem{$V_X$ (Short Field 10\degree{})}{56 KIAS}
+    \checkitem{$V_Y$}{76 KIAS}
+    \checkitem{$V_{CC}$}{70-85 KIAS}
+    \checkitem{$V_{Ref}$ (Normal 0\degree{})}{65-75 KIAS}
+    \checkitem{$V_{Ref}$ (Normal 30\degree{})}{60-70 KIAS}
+    \checkitem{$V_{Ref}$ (Short Field 30\degree{})}{61 KIAS}
+    \checkitem{$V_A$}{82-99 KIAS}
+    \checkitem{$V_{S_{0}}$/$V_{S_{1}}$}{33/44 KIAS}
+\end{checklist}
+
+\onecolumn
