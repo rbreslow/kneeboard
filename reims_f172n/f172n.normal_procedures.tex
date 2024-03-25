@@ -152,6 +152,27 @@
     \end{tcolorbox}
 \end{checklist}
 
+\begin{checklist}{Climb}
+    \checkitem{Mixture}{full rich or max RPM}
+    \checkitem{Throttle}{full power}
+    \checkitem{Airspeed}{70 - 85 KIAS}
+\end{checklist}
+
+% TODO: Do 55% power as well under similar conditions. For holding, better
+% range, etc.
+\begin{checklist}{Cruise}
+    % From Reims F172N flight manual, cruise performance, max weight 1043 kg,
+    % standard temperature, 2000 ft pressure altitude.
+    \checkitem{Throttle}{2400 RPM}
+    \checkitem{Mixture}{best power}
+    \checkitem{Fuel flow}{7.5 GPH}
+    % https://aerotoolbox.com/airspeed-conversions/ says 111 kts TAS at 2000 ft
+    % is 108 kts CAS. F172N airspeed correction table says 108 kts CAS is 110
+    % kts IAS.
+    \checkitem{Airspeed}{110 KIAS}
+    \checkitem{Cruise performance table}{check}
+\end{checklist}
+
 \begin{checklist}{Before Approach}
     \checkitem{NOTAMS}{brief}
     \checkitem{ATIS, arrival, \& approach}{brief}
