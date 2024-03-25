@@ -4,10 +4,10 @@
 \input{../shared/climb_descent_table.tex}
 \input{../shared/additional_runway_length_table.tex}
 
-\newcommand{\bookemptyweight}{1634}
-\newcommand{\maxgrossweight}{2550}
-% Approximately two 160 lb adults, 10 lb of baggage, and 40 gal of fuel remaining.
-\newcommand{\grossweight}{2150}
+\newcommand{\bookemptyweight}{1393} % From Cessna 172N POH
+\newcommand{\maxgrossweight}{2300}
+% Approximately two 160 lb adults, 10 lb of baggage, and 36 gal of fuel remaining in OY-AZM.
+\newcommand{\grossweight}{2051}
 % The calibrated airspeeds for Vx, Vbg, and Vmd–as well as stall speed Vs and
 % minimum descent rate (h_md) are porportional to gross aircraft weight.
 \newcommand{\scaledvspeed}[1]{\fpeval{#1 + #1 / (2 * \grossweight) * (\grossweight - \maxgrossweight)}}
@@ -15,25 +15,24 @@
 \newcommand{\bankedvspeed}[2]{\fpeval{#1 / sqrt(cosd(#2))}}
 % Piper's AFM states that "linear interpolation may be used for intermediate
 % gross weights."
-\newcommand{\maneuveringspeed}{\fpeval{89 + (\grossweight - \bookemptyweight) * ((113 - 89) / (\maxgrossweight - \bookemptyweight))}}
+\newcommand{\maneuveringspeed}{\fpeval{80 + (\grossweight - \bookemptyweight) * ((97 - 80) / (\maxgrossweight - \bookemptyweight))}}
 % Keep in mind that there may be some error here–the indicated airspeeds for the
 % V speeds mentioned above vary with air density, too (slightly).
-\newcommand{\bestglidespeed}{\scaledvspeed{76}}
+\newcommand{\bestglidespeed}{\scaledvspeed{65}}
 
 \phantomsection
-\addcontentsline{toc}{subsection}{Archer flight maneuver entry speeds at \num{\grossweight} lbf}
+\addcontentsline{toc}{subsection}{F172N flight maneuver entry speeds at \num{\grossweight} lbf}
 
 \begin{table}[H]
-    \caption{Archer flight maneuver entry speeds at \num{\grossweight} lbf}
+    \caption{F172N flight maneuver entry speeds at \num{\grossweight} lbf}
 
     \begin{center}
         \begin{tabular}{lc}
             \toprule
             \textbf{Maneuver} & \textbf{KIAS}                                                 \\
             \midrule
-            % We round maneuvering speed down to the nearest five knots because
-            % the ACS says we need "an airspeed not to exceed Va."
-            Steep Turns       & \fpeval{floor(\maneuveringspeed / 5) * 5}                     \\
+            % From Reims/Cessna F172N POH:
+            Steep Turns       & 95                     \\
             % The Airplane Flying Handbook says to establish "gliding speed"–not
             % any particular "best glide speed." According to Dr. John Lowry's
             % book, Performance of Light Aircraft, "for most (not all) intents
@@ -56,9 +55,9 @@
             %      approximately 86 KCAS. It makes sense to be ahead of L/D max,
             %      so we round up to the nearest 5 knots:
             Steep Spiral      & \fpeval{(ceil(\bankedvspeed{\bestglidespeed}{50} / 10) * 10)} \\
-            Chandelles        & \fpeval{floor(\maneuveringspeed / 5) * 5}                     \\
-            Lazy Eights       & \fpeval{floor(\maneuveringspeed / 5) * 5}                     \\
-            Eights on Pylons  & \fpeval{floor(\maneuveringspeed / 5) * 5}                     \\
+            Chandelles        & 105                     \\
+            Lazy Eights       & 105               \\
+            Eights on Pylons  & 105                     \\ % Copying Lazy Eights/Chandelles
             \bottomrule
             % TODO: Add accelerated stall entry speed.
         \end{tabular}
